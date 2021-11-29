@@ -1,5 +1,7 @@
 #pragma once
 
+#include "16-BITS.c"
+
 unsigned int getDWord(unsigned char reg)
 {
 	switch(reg)
@@ -25,20 +27,20 @@ unsigned int setDWord(unsigned char reg, unsigned int value)
 	{
 		case 0: //EAX
 			setWord(1, (unsigned int)value/256);
-			setWord(0, value%256);
+			setWord(0, (unsigned int)value%256);
 			break;
 		case 1: //EBX
 			setWord(3, (unsigned int)value/256);
-			setWord(2, value%256);
+			setWord(2, (unsigned int)value%256);
 			break;
 			break;
 		case 2: //ECX
 			setWord(5, (unsigned int)value/256);
-			setWord(4, value%256);
+			setWord(4, (unsigned int)value%256);
 			break;
 		case 3: //EDX
 			setWord(7, (unsigned int)value/256);
-			setWord(6, value%256);
+			setWord(6, (unsigned int)value%256);
 			break;
 	}
 }
